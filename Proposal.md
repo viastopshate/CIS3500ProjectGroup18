@@ -59,12 +59,8 @@ Opening a new tab will load a website that displays the tamagotchi and its healt
 
 ## Notes
 
-### References & Inspiration 
+## References & Inspiration 
 One existing product that we could draw inspiration from is “Tabagotchi,” a very similar chrome extension tool. This tool lowers the health of the tamagotchi every time a new tab is opened, and the pet will die when too many tabs are closed. We could draw inspiration for visual and UI elements from this reference. 
-
-## References & Inspiration
-
-_[Include any references or sources that inspired your Chrome Extension idea. This could be articles, existing products, or other resources that informed your concept. Just paste any links you found during research.]_
 
 ## Technical Details
 
