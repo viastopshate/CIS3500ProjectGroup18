@@ -31,7 +31,6 @@ Opening a new tab will load a website that displays the tamagotchi and its healt
 5. Allows users to customize the appearance of their Tamagotchi, incentivizing a personal attachment to the digital pet, which makes the extension work better! 
 
 ## User Stories
-
 1. As a freelancer, I want to set specific goals for work and break times and see how it affects my Tamagotchi's well-being, to better manage my work-life balance.
 2. As a user, I want to see a clear warning when my Tamagotchi is about to "die" from too much distraction to prompt me to focus on work.
 3. As a gamer, I want to unlock new features or appearances for my Tamagotchi by maintaining a healthy balance of productive and leisure time, adding a fun incentive to stay focused.
@@ -66,41 +65,40 @@ One existing product that we could draw inspiration from is “Tabagotchi,” a 
 
 ### User Interface
 
-_[Describe the user interface of your Chrome Extension: What will users see when they interact with your extension? How will they interact with the extension? You can include rough sketches or wireframes to illustrate your design, but name your files `<project id>-ui-1.png`, `<project id>-ui-2.png`, etc.]_
+The extension will display a small sidebar that displays the tamagotchi design, its health bar, and a "settings" button.
 
-_[Describe which Chrome UI/UX elements you will use in your extension, such as pop-ups, context menus, browser actions, omnibox, sidebar, etc.]_
+The "settings" button will take you to a website. This website will display the tamagotchi and its health bar, the list of off task and on task websites with options to add websites and delete websites, and the total nubmer of minutes spent on task and off task. 
 
 ### API, Libraries, and Frameworks
 
-_[- List any APIs, libraries, or frameworks that you plan to use in your Chrome Extension.]_
-_[- Include links to the documentation or other relevant resources.]_
-_[- Explain very briefly how you will use these tools in your project, one sentence per item.]_
+We plan to use the React framework to build our tool.
 
 ### Data Storage
 
-_[Explain what data you might need to store, and provide some overview of the models—that is, the structure of the data.]_
+We need to store the current session's off task and on task time. We envision that we will store this data locally, using a JavaScript framework. 
 
 ## Project Management
 
 ### Collaboration and Task Allocation
 
-_[Select a Leader, who will make final decisions on the vision of the project; and a Manager, who will oversee the project management and ensure all team members have everything they need to contribute effectively. List the remaining team members and their roles.]_
+- **Leader:** Clara
+- **Manager:** Laya
+- **Remaining Team Members:** [John, Via]
 
-- **Leader:** [Name]
-- **Manager:** [Name]
-- **Remaining Team Members:** [Name 1, Name 2, [Name 3]]
+  Clara: Help with the visual and UI design. 
+  Laya: Delegate tasks and make sure things are completed. 
+  John: Help with the data storage component. 
+  Via: Help with overall project management and the software architecture. 
 
-_[Provide a brief overview of what each team member will work on. How will you collaborate on this project? What tools or platforms will you use to communicate and share code?]_
+We will use a shared GitHub respository to share code.
 
 ### Risks and Mitigation
 
-_[Identify potential risks that could affect the development of your Chrome Extension. How will you mitigate these risks? What is your contingency plan if things don't go as expected?]_
+A potential risk is adding too many features and being unable to accomplish tasks becuase we are new to the project. One way to mitigate these risks is by 
 
 ### Milestones and Timeline
 
-_[You have about four weeks to work on this project. During the project management, you will use an Agile methodology to manage your tasks. For now, provide your best estimate of the work done each week, from Week 1 to Week 4.]_
-
-_[- Week 1: Task 1, Task 2, Task 3
-- Week 2: Task 4, Task 5, Task 6
-- Week 3: Task 7, Task 8, Task 9
-- Week 4: Task 10, Task 11, Task 12]_
+- Week 1: draw up initial design, research & decide on stacks and frameworks, delegate tasks and start project
+- Week 2: create framework for the project, build the UI components, get a functional tamagotchi display
+- Week 3: add time storing functionality, add functionality to check which website user is on, create website to display all info
+- Week 4: ensure that popup display works, ensure that website display works, integrate all components together]_
