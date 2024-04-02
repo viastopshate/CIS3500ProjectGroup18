@@ -6,21 +6,15 @@ Clara Fee, John Otto, Laya Yalamanchili, Via Liu
 
 ## Problem Statement
 
-[Describe the problem that your Chrome Extension will solve. What are the pain points that users experience? How does your extension address these pain points?]
-
 Many people struggle to stay focused while working, especially because of the endless entertainment websites (Pinterest, YouTube, shopping, etc) that are easily accessible when browsing the web. In particular, it can be difficult for college students to block out large periods of time to study without getting distracted.
 
 Our Chromagotchi extension provides motivation for users to spend less time on distracting websites and more time on school or work related websites. Spending time on self-identified “work” websites raises the Tamagotchi’s health, while spending time on distracting websites like Pinterest and YouTube lowers the Tamagotchi’s health! Through a cute and visually appealing interface, this would incentivize the user to spend less time on distracting websites and help improve productivity and focus. 
 
 ## Target Audience
 
-[Identify the target audience for your Chrome Extension. Who will benefit from using your extension? What are the main characteristics of your target audience?]
-
 Since this is intended as a time management and productivity tool, it will benefit people who struggle to stay on task and may get easily distracted by other tasks while working on one task. In particular, we envisioned that this tool would be useful for college students who need to set aside blocks of time to study or work. In addition, people who enjoy games and art could be incentivized by the visual Tamagotchi element to follow the schedule that they set for themselves. 
 
 ## Description
-
-[Provide a general description of your Chrome Extension idea in 2-3 sentences. Explain the main purpose and functionality of the extension.]
 
 This chrome extension displays a miniature Tamagotchi, like a digital pet, at the top of your browser while you work. The tool mimics the original gameplay of a Tamagotchi: when you install the extension, your digital pet is “born” and you must take care of it, or else it’ll die! 
 
@@ -37,8 +31,6 @@ Opening a new tab will load a website that displays the tamagotchi and its healt
 5. Allows users to customize the appearance of their Tamagotchi, incentivizing a personal attachment to the digital pet, which makes the extension work better! 
 
 ## User Stories
-
-_[List user stories that describe the main features of your Chrome Extension. Use the following template: "As a [user role], I want to [goal] so that [benefit]." Fill in the brackets with the appropriate information. Provide 15 user stories or more.]_
 
 1. As a freelancer, I want to set specific goals for work and break times and see how it affects my Tamagotchi's well-being, to better manage my work-life balance.
 2. As a user, I want to see a clear warning when my Tamagotchi is about to "die" from too much distraction to prompt me to focus on work.
@@ -66,8 +58,6 @@ _[List user stories that describe the main features of your Chrome Extension. Us
 24. As a user, I want to see a visual reminder of my progress towards my productivity goals, so that I am motivated to continue developing positive work habits. 
 
 ## Notes
-
-_[Add any additional notes or considerations for your Chrome Extension idea. This could include potential challenges, alternative approaches, or specific features you want to highlight.]_
 
 ### References & Inspiration 
 One existing product that we could draw inspiration from is “Tabagotchi,” a very similar chrome extension tool. This tool lowers the health of the tamagotchi every time a new tab is opened, and the pet will die when too many tabs are closed. We could draw inspiration for visual and UI elements from this reference. 
