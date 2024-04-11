@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { WebsiteList } from './WebsiteList';
-import { HealthBar } from './HealthBar.jsx';
+import { Chromagotchi } from '../components/Chromagotchi';
 import { AddWebsite } from './AddWebsite';
-import usagiImage from './usagi.jpg';
+import avatarImage from '../components/avatar-images/usagi.jpg';
 import './App.css';
 
 // Initial list of websites
@@ -52,24 +52,21 @@ export default function App() {
     setHealth(Math.min(100, health + 2)); // Increase health by 2, maximum 100
   };
 
+  const onTaskTabs = websites.filter((website) => website.isOnTask).length;
+
   return (
     <div className="app">
       <h1>Welcome to Chromagotchi!</h1>
       <div className="content">
-        {/* Render the website list */}
         <WebsiteList
           websites={websites}
           toggleTaskStatus={toggleTaskStatus}
           removeWebsite={removeWebsite}
         />
         <div className="tamagotchi-container">
-          {/* Render the Tamagotchi image */}
-          <img src={usagiImage} alt="Tamagotchi" className="tamagotchi-image" />
-          {/* Render the health bar */}
-          <HealthBar health={health} />
+          <Chromagotchi onTaskTabs={onTaskTabs} avatarImage={avatarImage} />
         </div>
       </div>
-      {/* Render the AddWebsite component */}
       <AddWebsite addWebsite={addWebsite} />
     </div>
   );

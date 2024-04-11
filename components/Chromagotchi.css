@@ -1,0 +1,30 @@
+.health-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.health-bar {
+  width: 150px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.health-bar-fill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+.health-value {
+  font-size: 16px;
+}
