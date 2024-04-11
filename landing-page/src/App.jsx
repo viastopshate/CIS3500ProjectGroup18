@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { WebsiteList } from './WebsiteList';
-import { Chromagotchi } from './components/Chromagotchi';
+import { Chromagotchi } from './Chromagotchi';
 import { AddWebsite } from './AddWebsite';
-import avatarImage from './components/avatar-images/usagi.jpg';
+import avatarImage from './avatar-images/usagi.jpg';
 import './App.css';
 
 // Initial list of websites
