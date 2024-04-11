@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from './Chromagotchi';
 import { AddWebsite } from './AddWebsite';
-import avatarImage from './avatar-images/usagi.jpg';
+import usagiImage from './avatar-images/usagi.jpg';
+import chiikawaImage from './avatar-images/chiikawa.jpg';
 import './App.css';
 
 // Initial list of websites
@@ -14,10 +15,29 @@ const initialWebsites = [
   { id: 5, name: 'Netflix', timeOpened: '2:30 PM', isOnTask: false },
 ];
 
+const avatarImages = [usagiImage, chiikawaImage];
+
 export default function App() {
   // State variables for websites and health
   const [websites, setWebsites] = useState(initialWebsites);
+  const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
   const [health, setHealth] = useState(90);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHealth((prevHealth) => Math.max(0, prevHealth - 1));
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const onTaskCount = websites.filter((website) => website.isOnTask).length;
+    const newHealth = Math.max(0, health - onTaskCount * 2);
+    setHealth(newHealth);
+  }, [websites]);
 
   // Function to toggle the task status of a website
   const toggleTaskStatus = (websiteId) => {
@@ -49,10 +69,15 @@ export default function App() {
   const removeWebsite = (websiteId) => {
     const updatedWebsites = websites.filter((website) => website.id !== websiteId);
     setWebsites(updatedWebsites);
-    setHealth(Math.min(100, health + 2)); // Increase health by 2, maximum 100
+    setHealth((prevHealth) => Math.min(100, prevHealth + 2));
   };
-
-  const onTaskTabs = websites.filter((website) => website.isOnTask).length;
+  
+  const changeAvatar = (direction) => {
+    setCurrentAvatarIndex((prevIndex) => {
+      const newIndex = prevIndex + direction;
+      return newIndex >= 0 ? newIndex % avatarImages.length : avatarImages.length - 1;
+    });
+  };
 
   return (
     <div className="app">
@@ -64,7 +89,11 @@ export default function App() {
           removeWebsite={removeWebsite}
         />
         <div className="tamagotchi-container">
-          <Chromagotchi onTaskTabs={onTaskTabs} avatarImage={avatarImage} />
+          <Chromagotchi health={health} avatarImage={avatarImages[currentAvatarIndex]} />
+          <div className="avatar-buttons">
+            <button onClick={() => changeAvatar(-1)}>Left</button>
+            <button onClick={() => changeAvatar(1)}>Right</button>
+          </div>
         </div>
       </div>
       <AddWebsite addWebsite={addWebsite} />
