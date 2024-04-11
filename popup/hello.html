@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromagotchi Extension</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #7e57c2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 280px; /* Set a fixed width for the body */
+    overflow: hidden; /* Ensures no scrolling */
+  }
+  .container {
+    text-align: center;
+    border-radius: 12px;
+    padding: 20px;
+    background: #7e57c2; /* Match the body background */
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+  }
+  .header {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Space between title and image */
+  }
+  #pet-image {
+    margin: 10px 0;
+  }
+  .pet-name {
+    font-size: 1.5em; /* Bigger text for the pet name */
+    margin: 10px 0; /* Space around pet name */
+  }
+  .progress-container {
+    background-color: white;
+    border-radius: 25px;
+    margin: 10px 0;
+    padding: 3px; /* Padding around progress bar */
+    height: 26px; /* Increased height for visibility */
+    width: 90%; /* Relative width */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2); /* Inner shadow for depth */
+  }
+  .progress-bar {
+    height: 100%;
+    border-radius: 25px;
+    background-color: #00c853;
+    width: 8%; /* Reflects the progress */
+  }
+  .settings {
+    margin-top: 10px; /* Less space above settings button */
+    padding: 10px 20px; /* Larger button for touch friendliness */
+    font-size: 0.9em; /* Smaller text inside button */
+    width: 100%; /* Full container width */
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">chromagotchi</div>
+  <img id="pet-image" src="chromagotchi-icon.png" alt="Pet" style="width: 60px; height: 60px;"> <!-- Adjusted size to be closer to the design -->
+  <div class="pet-name">my-pet-name</div>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span style="margin-right: 10px;">8</span> <!-- This should probably be inside the progress-container -->
+  <button class="settings">settings</button>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
+
+
