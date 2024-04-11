@@ -74,6 +74,11 @@ export default function App() {
     });
   };
 
+  const resetChromagotchi = () => {
+    setWebsites(initialWebsites);
+    setHealth(90);
+  };
+
   return (
     <div className="app">
       <h1>Welcome to Chromagotchi!</h1>
@@ -86,10 +91,11 @@ export default function App() {
         <div className="tamagotchi-container">
           <Chromagotchi health={health} avatarImage={avatarImages[currentAvatarIndex]} />
           <div className="avatar-selection">
-            <h3>Choose your Chromagotchi</h3>
+            <h3>Choose your Chromagotchi!</h3>
             <div className="avatar-buttons">
               <button onClick={() => changeAvatar(-1)}>Prev</button>
               <button onClick={() => changeAvatar(1)}>Next</button>
+              <button onClick={resetChromagotchi}>Reset</button>
             </div>
           </div>
         </div>
