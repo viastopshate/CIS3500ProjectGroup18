@@ -50,12 +50,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 400px; 
   margin-left: 20px;
 }
 
-.tamagotchi-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.avatar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.avatar-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.avatar-buttons button {
+  margin: 0 5px;
 }

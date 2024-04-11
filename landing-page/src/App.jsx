@@ -25,13 +25,14 @@ export default function App() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setHealth((prevHealth) => Math.max(0, prevHealth - 1));
-    }, 1000);
+      const onTaskCount = websites.filter((website) => website.isOnTask).length;
+      setHealth((prevHealth) => Math.max(0, prevHealth - onTaskCount));
+    }, 600000); // 10 minutes in milliseconds
 
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [websites]);
 
   useEffect(() => {
     const onTaskCount = websites.filter((website) => website.isOnTask).length;
@@ -90,9 +91,12 @@ export default function App() {
         />
         <div className="tamagotchi-container">
           <Chromagotchi health={health} avatarImage={avatarImages[currentAvatarIndex]} />
-          <div className="avatar-buttons">
-            <button onClick={() => changeAvatar(-1)}>Left</button>
-            <button onClick={() => changeAvatar(1)}>Right</button>
+          <div className="avatar-selection">
+            <h3>Choose your Chromagotchi</h3>
+            <div className="avatar-buttons">
+              <button onClick={() => changeAvatar(-1)}>Prev</button>
+              <button onClick={() => changeAvatar(1)}>Next</button>
+            </div>
           </div>
         </div>
       </div>
