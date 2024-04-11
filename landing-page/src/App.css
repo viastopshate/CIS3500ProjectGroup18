@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
-  align-items: center; /* Add this line to vertically center the content */
+  align-items: center; 
 }
 
 .website-lists {
@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 20px;
-  max-width: 50%; /* Adjust the max-width to make the lists narrower */
+  max-width: 50%; 
 }
 
 .website-list {
