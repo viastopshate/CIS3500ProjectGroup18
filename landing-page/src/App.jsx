@@ -34,12 +34,6 @@ export default function App() {
     };
   }, [websites]);
 
-  useEffect(() => {
-    const onTaskCount = websites.filter((website) => website.isOnTask).length;
-    const newHealth = Math.max(0, health - onTaskCount * 2);
-    setHealth(newHealth);
-  }, [websites]);
-
   // Function to toggle the task status of a website
   const toggleTaskStatus = (websiteId) => {
     const updatedWebsites = websites.map(website => {
@@ -70,7 +64,7 @@ export default function App() {
   const removeWebsite = (websiteId) => {
     const updatedWebsites = websites.filter((website) => website.id !== websiteId);
     setWebsites(updatedWebsites);
-    setHealth((prevHealth) => Math.min(100, prevHealth + 2));
+    setHealth((prevHealth) => Math.min(100, prevHealth + 2)); 
   };
   
   const changeAvatar = (direction) => {
