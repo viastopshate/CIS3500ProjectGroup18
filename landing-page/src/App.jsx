@@ -103,13 +103,15 @@ export default function App() {
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-      const dataURL = reader.result;
-      setUploadedImage(dataURL);
-      localStorage.setItem('uploadedImage', dataURL);
-    };
-    reader.readAsDataURL(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataURL = reader.result;
+        setUploadedImage(dataURL);
+        localStorage.setItem('uploadedImage', dataURL);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const resetUploadedImage = () => {
@@ -148,7 +150,7 @@ export default function App() {
                 style={{ display: 'none' }}
                 onChange={handleImageUpload}
               />
-            </div>
+          </div>
           </div>
         </div>
       </div>

@@ -77,3 +77,16 @@
 .avatar-buttons button {
   margin: 0 5px;
 }
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.upload-button img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+}
