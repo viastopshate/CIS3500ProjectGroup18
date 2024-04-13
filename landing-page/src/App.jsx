@@ -16,14 +16,13 @@ const initialWebsites = [
   { id: 5, name: 'Netflix', timeOpened: Date.now(), isOnTask: false },
 ];
 
-const avatarImages = [usagiImage, chiikawaImage];
-
 export default function App() {
   // State variables for websites and health
   const [websites, setWebsites] = useState(initialWebsites);
   const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
   const [health, setHealth] = useState(90);
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [avatarImages, setAvatarImages] = useState([usagiImage, chiikawaImage]);
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -78,10 +77,15 @@ export default function App() {
   };
   
   const changeAvatar = (direction) => {
-    setCurrentAvatarIndex((prevIndex) => {
-      const newIndex = prevIndex + direction;
-      return newIndex >= 0 ? newIndex % avatarImages.length : avatarImages.length - 1;
-    });
+    if (uploadedImage) {
+      setUploadedImage(null);
+      setCurrentAvatarIndex(direction === 1 ? 0 : avatarImages.length - 1);
+    } else {
+      setCurrentAvatarIndex((prevIndex) => {
+        const newIndex = prevIndex + direction;
+        return newIndex >= 0 ? newIndex % avatarImages.length : avatarImages.length - 1;
+      });
+    }
   };
 
   const resetChromagotchi = () => {
@@ -108,27 +112,26 @@ export default function App() {
       reader.onload = () => {
         const dataURL = reader.result;
         setUploadedImage(dataURL);
+        setAvatarImages([...avatarImages, dataURL]);
         localStorage.setItem('uploadedImage', dataURL);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const resetUploadedImage = () => {
-    setUploadedImage(null);
-    localStorage.removeItem('uploadedImage');
-  };
-
   return (
     <div className="app">
       <h1>Welcome to Chromagotchi!</h1>
       <div className="content">
-        <WebsiteList
-          websites={websites}
-          toggleTaskStatus={toggleTaskStatus}
-          removeWebsite={removeWebsite}
-          addWebsite={addWebsite}
-        />
+        <div className="website-lists">
+          <WebsiteList
+            websites={websites}
+            toggleTaskStatus={toggleTaskStatus}
+            removeWebsite={removeWebsite}
+            addWebsite={addWebsite}
+          />
+        </div>
+        <SummaryStats {...calculateSummaryStats()} />
         <div className="tamagotchi-container">
           <Chromagotchi
             health={health}
@@ -150,11 +153,10 @@ export default function App() {
                 style={{ display: 'none' }}
                 onChange={handleImageUpload}
               />
-          </div>
+            </div>
           </div>
         </div>
       </div>
-      <SummaryStats {...calculateSummaryStats()} />
     </div>
   );
 }
