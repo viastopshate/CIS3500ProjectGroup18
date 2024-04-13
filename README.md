@@ -4,10 +4,22 @@ Group Members: Clara Fee, John Otto, Laya Yalamanchili, Via Liu
 
 ## Components
 
-### Landing Page (1.0)
+### Landing Page (Current Version: 1.1)
 
-The Landing Page (Version 1.0) supports the following features:
+## Past Version Features
 
-1. **Website Categorization:** Users can categorize websites as either "On Task" or "Off Task" based on their productivity value. The landing page allows users to easily move websites between these two categories, providing a clear overview of their browsing activity.
-2. **Tamagotchi Health System:** The landing page integrates a virtual pet, the Chromagotchi, whose health is directly influenced by the user's browsing behavior. Opening new websites decreases the Chromagotchi's health, while closing websites increases it. This gamification element encourages users to be mindful of their internet usage and strike a balance between productivity and leisure.
-3. **Real-time Website Addition:** Users can add new websites to the landing page in real-time using the provided input field. Upon adding a website, it is automatically reflected in the appropriate task category ("On Task" or "Off Task") and immediately affects the Chromagotchi's health based on the total number of websites opened.
+1. **Website Categorization**: Easily categorize websites as "On Task" or "Off Task" to monitor productivity.
+2. **Tamagotchi Health System**: A virtual pet, Chromagotchi, encourages balanced browsing by changing health based on website activity.
+3. **Real-time Website Addition**: Add new websites in real-time, with immediate impact on task categories and Chromagotchi health.
+
+## Latest Upates
+
+1. **Avatar Selection and Upload**: Choose and upload your own avatar. (Note: Avatar upload has minor bugs, fixes incoming.)
+2. **Reset Feature**: Reset Chromagotchi to start afresh.
+3. **Summary Stats**: View total usage time for "On Task" and "Off Task" websites.
+
+## Latest Bug Fixes and Display Changes
+
+1. **Time Display Update**: Switched from "open time" to "time opened" and updated display settings.
+2. **Task List Integration**: Moved the add website bar into each task list for improved clarity.
+3. **Health System Tweaks**: Health decrease is now also based on time spent with multiple websites open.
