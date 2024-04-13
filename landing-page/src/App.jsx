@@ -121,7 +121,9 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>Welcome to Chromagotchi!</h1>
+      <header>
+        <h1 className="header">Welcome to Chromagotchi!</h1>
+      </header>
       <div className="content">
         <div className="website-lists">
           <WebsiteList
