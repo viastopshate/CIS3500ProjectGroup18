@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from './Chromagotchi';
-import { AddWebsite } from './AddWebsite';
 import usagiImage from './avatar-images/usagi.jpg';
 import chiikawaImage from './avatar-images/chiikawa.jpg';
 import './App.css';
@@ -48,18 +47,6 @@ export default function App() {
     setWebsites(updatedWebsites);
   };
 
-  // Function to add a new website
-  const addWebsite = (name, timeOpened, isOnTask) => {
-    const newWebsite = {
-      id: Date.now(),
-      name,
-      timeOpened,
-      isOnTask,
-    };
-    setWebsites([...websites, newWebsite]);
-    setHealth(Math.max(0, health - 2));
-  };
-
   // Function to remove a website
   const removeWebsite = (websiteId) => {
     const updatedWebsites = websites.filter((website) => website.id !== websiteId);
@@ -100,7 +87,6 @@ export default function App() {
           </div>
         </div>
       </div>
-      <AddWebsite addWebsite={addWebsite} />
     </div>
   );
 }
