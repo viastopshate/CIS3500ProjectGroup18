@@ -8,11 +8,11 @@ import './App.css';
 
 // Initial list of websites
 const initialWebsites = [
-  { id: 1, name: 'Google', timeOpened: '10:00 AM', isOnTask: true },
-  { id: 2, name: 'Gmail', timeOpened: '11:30 AM', isOnTask: true },
-  { id: 3, name: 'Canvas', timeOpened: '12:15 PM', isOnTask: true },
-  { id: 4, name: 'YouTube', timeOpened: '9:45 AM', isOnTask: false },
-  { id: 5, name: 'Netflix', timeOpened: '2:30 PM', isOnTask: false },
+  { id: 1, name: 'Google', timeOpened: Date.now(), isOnTask: true },
+  { id: 2, name: 'Gmail', timeOpened: Date.now(), isOnTask: true },
+  { id: 3, name: 'Canvas', timeOpened: Date.now(), isOnTask: true },
+  { id: 4, name: 'YouTube', timeOpened: Date.now(), isOnTask: false },
+  { id: 5, name: 'Netflix', timeOpened: Date.now(), isOnTask: false },
 ];
 
 const avatarImages = [usagiImage, chiikawaImage];

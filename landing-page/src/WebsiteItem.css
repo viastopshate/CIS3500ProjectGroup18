@@ -1,0 +1,20 @@
+.website-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .time-opened {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .website-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .website-buttons button {
+    margin-left: 10px;
+  }

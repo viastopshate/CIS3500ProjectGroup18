@@ -7,7 +7,7 @@ export function AddWebsite({ addWebsite }) {
   // Function to handle adding a new website
   const handleAddWebsite = () => {
     if (websiteName.trim() !== '') {
-      const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const currentTime = Date.now();
       addWebsite(websiteName.trim(), currentTime);
       setWebsiteName('');
     }
