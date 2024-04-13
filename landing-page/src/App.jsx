@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from './Chromagotchi';
 import usagiImage from './avatar-images/usagi.jpg';
 import chiikawaImage from './avatar-images/chiikawa.jpg';
+import { SummaryStats } from './SummaryStats';
+import uploadImage from './upload.jpg';
 import './App.css';
 
 // Initial list of websites
@@ -21,6 +23,8 @@ export default function App() {
   const [websites, setWebsites] = useState(initialWebsites);
   const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
   const [health, setHealth] = useState(90);
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,6 +36,13 @@ export default function App() {
       clearInterval(timer);
     };
   }, [websites]);
+
+  useEffect(() => {
+    const savedUploadedImage = localStorage.getItem('uploadedImage');
+    if (savedUploadedImage) {
+      setUploadedImage(savedUploadedImage);
+    }
+  }, []);
 
   // Function to toggle the task status of a website
   const toggleTaskStatus = (websiteId) => {
@@ -78,6 +89,34 @@ export default function App() {
     setHealth(90);
   };
 
+  const calculateSummaryStats = () => {
+    const currentTime = Date.now();
+    const onTaskTime = websites
+      .filter((website) => website.isOnTask)
+      .reduce((total, website) => total + (currentTime - website.timeOpened), 0);
+    const offTaskTime = websites
+      .filter((website) => !website.isOnTask)
+      .reduce((total, website) => total + (currentTime - website.timeOpened), 0);
+
+    return { onTaskTime, offTaskTime };
+  };
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      setUploadedImage(dataURL);
+      localStorage.setItem('uploadedImage', dataURL);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const resetUploadedImage = () => {
+    setUploadedImage(null);
+    localStorage.removeItem('uploadedImage');
+  };
+
   return (
     <div className="app">
       <h1>Welcome to Chromagotchi!</h1>
@@ -89,17 +128,31 @@ export default function App() {
           addWebsite={addWebsite}
         />
         <div className="tamagotchi-container">
-          <Chromagotchi health={health} avatarImage={avatarImages[currentAvatarIndex]} />
+          <Chromagotchi
+            health={health}
+            avatarImage={uploadedImage || avatarImages[currentAvatarIndex]}
+          />
           <div className="avatar-selection">
-            <h3>Choose your Chromagotchi!</h3>
+            <h3>Choose your Chromagotchi</h3>
             <div className="avatar-buttons">
               <button onClick={() => changeAvatar(-1)}>Prev</button>
               <button onClick={() => changeAvatar(1)}>Next</button>
               <button onClick={resetChromagotchi}>Reset</button>
             </div>
+            <div className="upload-button">
+              <img src={uploadImage} alt="Upload" onClick={() => fileInputRef.current.click()} />
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                style={{ display: 'none' }}
+                onChange={handleImageUpload}
+              />
+            </div>
           </div>
         </div>
       </div>
+      <SummaryStats {...calculateSummaryStats()} />
     </div>
   );
 }
