@@ -49,15 +49,15 @@ export default function App() {
   };
 
   // Function to add a new website
-  const addWebsite = (name, timeOpened) => {
+  const addWebsite = (name, timeOpened, isOnTask) => {
     const newWebsite = {
       id: Date.now(),
       name,
       timeOpened,
-      isOnTask: true,
+      isOnTask,
     };
     setWebsites([...websites, newWebsite]);
-    setHealth(Math.max(0, health - 2)); // Decrease health by 2, minimum 0
+    setHealth(Math.max(0, health - 2));
   };
 
   // Function to remove a website
