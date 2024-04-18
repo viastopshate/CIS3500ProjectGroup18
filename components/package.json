@@ -1,0 +1,8 @@
+{
+    "name": "components",
+    "version": "1.0.0",
+    "description": "Shared components for the extension",
+    "main": "index.js",
+    "author": "Via",
+    "license": "MIT"
+  }

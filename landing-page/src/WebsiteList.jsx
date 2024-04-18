@@ -1,15 +1,15 @@
 import React from 'react';
 import { WebsiteItem } from './WebsiteItem';
 import './WebsiteList.css';
+import { AddWebsite } from './AddWebsite';
 
-export function WebsiteList({ websites, toggleTaskStatus, removeWebsite }) {
+export function WebsiteList({ websites, toggleTaskStatus, removeWebsite, addWebsite }) {
   // Filter websites based on their task status
   const onTaskWebsites = websites.filter(website => website.isOnTask);
   const offTaskWebsites = websites.filter(website => !website.isOnTask);
 
   return (
     <div className="website-list">
-      {/* Render the list of on-task websites */}
       <div className="list-container">
         <h2>On Task Websites</h2>
         <ul>
@@ -22,8 +22,8 @@ export function WebsiteList({ websites, toggleTaskStatus, removeWebsite }) {
             />
           ))}
         </ul>
+        <AddWebsite addWebsite={(name, timeOpened) => addWebsite(name, timeOpened, true)} />
       </div>
-      
       <div className="list-container">
         <h2>Off Task Websites</h2>
         <ul>
@@ -36,6 +36,7 @@ export function WebsiteList({ websites, toggleTaskStatus, removeWebsite }) {
             />
           ))}
         </ul>
+        <AddWebsite addWebsite={(name, timeOpened) => addWebsite(name, timeOpened, false)} />
       </div>
     </div>
   );

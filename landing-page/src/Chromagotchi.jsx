@@ -1,14 +1,13 @@
 import React from 'react';
-import './HealthBar.css';
+import './Chromagotchi.css';
 
-export function HealthBar({ health }) {
+export function Chromagotchi({ health, avatarImage }) {
   return (
     <div className="health-bar-container">
-      {/* Render the health bar */}
+      <img src={avatarImage} alt="Chromagotchi Avatar" className="avatar" />
       <div className="health-bar">
         <div className="health-bar-fill" style={{ width: `${health}%` }}></div>
       </div>
-      {/* Display the health value */}
       <div className="health-value">{health}</div>
     </div>
   );

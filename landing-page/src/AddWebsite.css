@@ -1,8 +1,8 @@
 .add-website {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
   
   .add-website input {
     flex: 1;

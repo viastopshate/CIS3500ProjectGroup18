@@ -6,6 +6,21 @@
   flex-direction: column;
 }
 
+.header {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Comic Sans MS', cursive;
+  margin-bottom: 20px;
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 20px; 
+}
+
 .content {
   display: flex;
   justify-content: space-between;
@@ -50,12 +65,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 400px; 
   margin-left: 20px;
 }
 
-.tamagotchi-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.avatar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.avatar-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.avatar-buttons button {
+  margin: 0 5px;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.upload-button img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 10px;
 }

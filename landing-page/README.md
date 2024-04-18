@@ -1,19 +1,19 @@
-# Chromagotchi Landing Page (Version 1.0)
+# Chromagotchi Landing Page (Version 1.1)
 
-Welcome to the Chromagotchi Landing Page! This page serves as a fun and interactive way to track your browsing habits and encourage productivity. With Chromagotchi, you can visualize your online activity and take care of a virtual pet at the same time.
+## Features from Last Edition (Version 1.0, April 11)
 
-## How It Works
+1. **Website Categorization**: Easily categorize websites as "On Task" or "Off Task" to monitor productivity.
+2. **Tamagotchi Health System**: A virtual pet, Chromagotchi, encourages balanced browsing by changing health based on website activity.
+3. **Real-time Website Addition**: Add new websites in real-time, with immediate impact on task categories and Chromagotchi health.
 
-The landing page displays a list of websites you've visited, categorized as either "On Task" or "Off Task." You can easily add new websites using the provided input field, and the page will automatically track the time you opened each website.
+## New Additions (April 13)
 
-As you browse the web, your actions affect the health of your virtual pet, the Chromagotchi. Opening new websites will decrease the Chromagotchi's health, while closing websites will increase it. The goal is to strike a balance between productivity and leisure to keep your Chromagotchi happy and healthy.
+1. **Avatar Selection and Upload**: Choose and upload your own avatar. (Note: Avatar upload has minor bugs, fixes incoming.)
+2. **Reset Feature**: Reset Chromagotchi to start afresh.
+3. **Summary Stats**: View total usage time for "On Task" and "Off Task" websites.
 
-## Components
+## Bug Fixes and Display Changes (April 13)
 
-- `App`: The main component that renders the landing page and manages the overall state of the application.
-- `WebsiteList`: Displays the list of websites categorized as "On Task" and "Off Task," allowing you to toggle the task status or remove websites.
-- `WebsiteItem`: Represents an individual website item in the list, showing the website name and time opened, along with buttons to move the website between lists or close it.
-- `HealthBar`: Visualizes the health of your Chromagotchi, updating dynamically based on your browsing activity.
-- `AddWebsite`: Provides an input field and button to add new websites to the list.
-
-Start trackin'!
+1. **Time Display Update**: Switched from "open time" to "time opened" and updated display settings.
+2. **Task List Integration**: Moved the add website bar into each task list for improved clarity.
+3. **Health System Tweaks**: Health decrease is now also based on time spent with multiple websites open.
