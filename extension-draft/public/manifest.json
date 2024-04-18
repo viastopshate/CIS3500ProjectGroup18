@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Chromagotchi",
+  "version": "1.0",
+  "description": "A productivity tool that motivates you with a digital pet!",
+  "icons": {
+    "16": "images/favicon-16x16.png",
+    "32": "images/favicon-32x32.png"
+  },
+  "offline_enabled": true,
+  "permissions": ["storage", "activeTab", "contextMenus", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "components/landing-page/build/index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["components/landing-page/build/static/js/*", "components/landing-page/build/static/css/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

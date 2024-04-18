@@ -1,0 +1,10 @@
+.App {
+    color: black;
+    text-align: center;
+}
+
+.container {
+  width: 400px;
+  padding: 1rem;
+  background-color: white;
+}

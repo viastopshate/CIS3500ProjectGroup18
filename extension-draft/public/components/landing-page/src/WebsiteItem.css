@@ -1,0 +1,25 @@
+li {
+    margin-bottom: 10px;
+  }
+  
+  .website-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+  
+  .time-opened {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .website-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+  }
+  
+  .website-buttons button {
+    margin-right: 10px;
+  }
