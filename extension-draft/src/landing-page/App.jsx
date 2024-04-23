@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { WebsiteList } from './WebsiteList';
-import { Chromagotchi } from './Chromagotchi';
-import usagiImage from './avatar-images/usagi.jpg';
-import chiikawaImage from './avatar-images/chiikawa.jpg';
+import { Chromagotchi } from '../Chromagotchi';
+import usagiImage from '../avatar-images/usagi.jpg';
+import chiikawaImage from '../avatar-images/chiikawa.jpg';
 import { SummaryStats } from './SummaryStats';
 import uploadImage from './upload.jpg';
 import './App.css';
@@ -20,7 +20,7 @@ export default function App() {
   // State variables for websites and health
   const [websites, setWebsites] = useState(initialWebsites);
   const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
-  const [health, setHealth] = useState(90);
+  const [health, setHealth] = useState(100);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [avatarImages, setAvatarImages] = useState([usagiImage, chiikawaImage]);
   const fileInputRef = useRef(null);
@@ -28,7 +28,9 @@ export default function App() {
   useEffect(() => {
     const timer = setInterval(() => {
       const onTaskCount = websites.filter((website) => website.isOnTask).length;
-      setHealth((prevHealth) => Math.max(0, prevHealth - onTaskCount));
+      const newHealth = (prevHealth) => Math.max(0, prevHealth - onTaskCount)
+      setHealth(newHealth);
+      chrome.storage.local.set({ health: newHealth });
     }, 600000); // 10 minutes in milliseconds
 
     return () => {
@@ -41,6 +43,15 @@ export default function App() {
     if (savedUploadedImage) {
       setUploadedImage(savedUploadedImage);
     }
+  }, []);
+
+  // Fetch the current health value when the component mounts
+  useEffect(() => {
+    chrome.storage.local.get(['health'], function(result) {
+      if (result.healthbar !== undefined) {
+        setHealth(result.healthbar);
+      }
+    });
   }, []);
 
   // Function to toggle the task status of a website
