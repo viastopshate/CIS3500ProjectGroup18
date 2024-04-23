@@ -3,12 +3,12 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: "./src/index.js",
   mode: "production",
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: "babel-loader",
         exclude: /node_modules/,
       },
@@ -16,6 +16,10 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset/inline' // This will inline all matched assets as Data UR
       },
     ],
   },

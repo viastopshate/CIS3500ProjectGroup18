@@ -20,9 +20,9 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.tabs.onCreated.addListener(function(tab) {
-  if (tab.url === 'chrome://newtab/') {
-    chrome.tabs.update(tab.id, {
-      url: 'landing_page.html'
-    });
+  // Check if the tab is a blank new tab
+  if (tab.url === 'chrome://newtab/' || tab.url === '') {
+    chrome.tabs.update(tab.id, {url: chrome.runtime.getURL("index.html")});
   }
 });
+
