@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chromagotchi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="pet-container">
+        <div id="pet-name">Chromagotchi</div>
+        <img src="dog.png" alt="Chromagotchi" id="pet-image">
+        <div id="progress-container">
+            <progress id="pet-progress" value="90" max="100"></progress>
+            <span id="progress-value">90%</span> <!-- Added % for clarity -->
+        </div>
+        <button id="settings">Settings</button>
+    </div>
+
+    <!-- Enhanced container for displaying the tabs data -->
+    <div id="tabs-data-container">
+        <h2>Tracked Tabs</h2>
+        <ul id="tabs-list">
+            <!-- Tab details will be dynamically injected here by popup.js -->
+        </ul>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
