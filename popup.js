@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const infoDiv = document.getElementById('tabInfo');
     const printButton = document.getElementById('printButton');
+    const visitedUrlsDiv = document.getElementById('visitedUrlsList'); // Get the div for displaying visited URLs
 
     // Function to fetch and display current tab information and store it
     function updateTabInfo() {
