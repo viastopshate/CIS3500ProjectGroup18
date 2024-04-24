@@ -26,6 +26,15 @@ async function trackTime() {
     }
 }
 
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message.action === "redden") {
+        chrome.scripting.executeScript({
+            target: { tabId: sender.tab.id },
+            func: reddenPage
+        });
+    }
+});
+
 // Example function to save tabs data periodically or on certain events
 async function saveTabs() {
     const storage = injectStorage();
