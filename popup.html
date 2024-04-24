@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Current Tab Info</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 8px; }
-    #tabInfo { margin-top: 10px; }
+    #tabInfo, #urlsList { margin-top: 10px; }
+    #urlsList { margin-top: 20px; }
+    h2 { margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>Current Tab</h1>
   <div id="tabInfo">Loading...</div>
   <button id="printButton">Print Tab Info</button>
+
+  <h2>Visited URLs</h2>
+  <div id="visitedUrlsList">Visited URLs:</div> <!-- Div to display visited URLs -->
+
   <script src="popup.js"></script>
 </body>
 </html>
