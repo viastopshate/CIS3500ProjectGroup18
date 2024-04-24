@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const infoDiv = document.getElementById('tabInfo');
-    const printButton = document.getElementById('printButton');
     const visitedUrlsDiv = document.getElementById('visitedUrlsList'); // Get the div for displaying visited URLs
+    const printButton = document.getElementById('printButton');
 
     // Function to fetch and display current tab information and store it
     function updateTabInfo() {
@@ -16,14 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     const visitedUrls = result.visitedUrls;
                     visitedUrls.push({title: currentTab.title, url: currentTab.url, time: new Date().toISOString()});
 
-                    // Update the stored list
+                    // Update the stored list and display in popup
                     chrome.storage.local.set({visitedUrls: visitedUrls}, function() {
                         console.log('Updated visited URLs:', visitedUrls);
+                        displayVisitedUrls(visitedUrls); // Display visited URLs in the popup
                     });
                 });
             } else {
                 infoDiv.textContent = 'No active tab found.';
             }
+        });
+    }
+
+    // Function to display visited URLs in the popup
+    function displayVisitedUrls(visitedUrls) {
+        visitedUrlsDiv.innerHTML = '<h4>Visited URLs:</h4>';
+        visitedUrls.forEach(urlInfo => {
+            visitedUrlsDiv.innerHTML += `<p>Title: ${urlInfo.title}<br>URL: ${urlInfo.url}<br>Time: ${urlInfo.time}</p>`;
         });
     }
 
@@ -35,9 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.print();
     });
 
-    // Optionally, add a button or some mechanism to log all visited URLs from storage to the console
-    // This could be another button or just part of the popup initialization
+    // Initially display the visited URLs stored so far
     chrome.storage.local.get('visitedUrls', function(result) {
-        console.table(result.visitedUrls);
+        displayVisitedUrls(result.visitedUrls);
     });
 });
