@@ -1,59 +1,59 @@
-const HTMLPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const path = require("path");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
-    popup: "./src/Popup.jsx",
+    main: './src/index.js',
+    popup: './src/popup.js',
   },
-  mode: "production",
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+  },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|js|jsx)$/,
-        use: "babel-loader",
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        type: 'asset/inline', // This will inline all matched assets as Data URI
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new HTMLPlugin({
-      template: "./public/index.html",
-      filename: "index.html",
-      chunks: ["main"],
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: 'index.html',
+      chunks: ['main'],
     }),
-    new HTMLPlugin({
-      template: "./public/popup.html",
-      filename: "popup.html",
-      chunks: ["popup"],
+    new HtmlWebpackPlugin({
+      template: './public/popup.html',
+      filename: 'popup.html',
+      chunks: ['popup'],
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "public",
-          to: "",
-          globOptions: {
-            ignore: ["**/index.html", "**/popup.html"], // Excludes index.html and popup.html
-          },
-        },
-      ],
+      patterns: [{ from: 'public', to: '.', globOptions: { ignore: ['**/index.html', '**/popup.html'] } }],
     }),
   ],
 };

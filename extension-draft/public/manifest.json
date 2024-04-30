@@ -10,18 +10,11 @@
     "192": "images/android-chrome-192x192.png",
     "512": "images/android-chrome-512x512.png"
   },
-  "offline_enabled": true,
   "permissions": ["storage", "activeTab", "contextMenus", "tabs"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": ["index.html", "popup.html"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  }
 }
