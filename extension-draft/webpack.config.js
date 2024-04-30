@@ -53,7 +53,9 @@ module.exports = {
       chunks: ['popup'],
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'public', to: '.', globOptions: { ignore: ['**/index.html', '**/popup.html'] } }],
+      patterns: [
+        { from: 'public', to: '.', globOptions: { ignore: ['**/index.html', '**/popup.html'] } },
+      ],
     }),
   ],
 };

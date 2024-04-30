@@ -8,7 +8,7 @@ export function Popup() {
   const [avatarImage, setAvatarImage] = useState(usagiImage);
 
   const handleDetailsClick = () => {
-    chrome.tabs.create({ url: chrome.runtime.getURL('index.html') });
+    chrome.tabs.create({ url: 'index.html' });
   };
 
   return (
