@@ -1,23 +1,23 @@
 .popup-container {
-    width: 280px;
-    padding: 20px;
+    width: 200px;
+    padding: 10px;
     background-color: #7e57c2;
     color: white;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 8px;
   }
   
   .header {
     text-align: left;
     font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.2em;
+    margin-bottom: 8px;
   }
   
   .details-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 0.9em;
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 0.8em;
     width: 100%;
     box-sizing: border-box;
     background-color: white;
