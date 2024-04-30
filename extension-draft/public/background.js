@@ -15,10 +15,3 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     console.log(Date.now(), "Selected text: ", selectedText);
   }
 });
-
-// Open the landing page when the "Details" button is clicked in the popup
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "openLandingPage") {
-    chrome.tabs.create({ url: "index.html" });
-  }
-});

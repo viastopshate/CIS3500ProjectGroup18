@@ -20,5 +20,11 @@
       "16": "images/favicon-16x16.png",
       "32": "images/favicon-32x32.png"
     }
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
