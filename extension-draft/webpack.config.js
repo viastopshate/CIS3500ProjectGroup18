@@ -3,7 +3,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: "./src/index.js",
+    popup: "./src/Popup.jsx",
+  },
   mode: "production",
   module: {
     rules: [
@@ -19,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        type: 'asset/inline' // This will inline all matched assets as Data UR
+        type: 'asset/inline', // This will inline all matched assets as Data URI
       },
     ],
   },
@@ -28,12 +31,18 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
   },
   plugins: [
-    /* Necessary to use HTMLPlugin to inject the bundle into the index.html */
     new HTMLPlugin({
       template: "./public/index.html",
+      filename: "index.html",
+      chunks: ["main"],
+    }),
+    new HTMLPlugin({
+      template: "./public/popup.html",
+      filename: "popup.html",
+      chunks: ["popup"],
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -41,7 +50,7 @@ module.exports = {
           from: "public",
           to: "",
           globOptions: {
-            ignore: ["**/index.html"], // This line excludes index.html
+            ignore: ["**/index.html", "**/popup.html"], // Excludes index.html and popup.html
           },
         },
       ],

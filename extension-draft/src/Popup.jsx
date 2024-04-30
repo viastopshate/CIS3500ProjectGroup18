@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
-import { Popup } from './Popup';
-import usagiImage from './avatar-images/usagi.jpg';
-import './App.css';
+import React from 'react';
+import { Chromagotchi } from './Chromagotchi';
+import './Popup.css';
 
-export default function App({ health, avatarImage }) {
-  const handleDetailsClick = () => {
-    window.open(chrome.runtime.getURL('index.html'), '_blank');
-  };
-
+export function Popup({ health, avatarImage, onDetailsClick }) {
   return (
-    <div className="app">
-      <Popup
-        health={health}
-        avatarImage={avatarImage}
-        onDetailsClick={handleDetailsClick}
-      />
+    <div className="popup-container">
+      <div className="header">Chromagotchi</div>
+      <Chromagotchi health={health} avatarImage={avatarImage} />
+      <button className="details-button" onClick={onDetailsClick}>
+        Details
+      </button>
     </div>
   );
 }

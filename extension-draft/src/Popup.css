@@ -1,15 +1,27 @@
 .popup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
+    width: 280px;
+    padding: 20px;
+    background-color: #7e57c2;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+  }
+  
+  .header {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px;
   }
   
   .details-button {
-    margin-top: 16px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    color: #7e57c2;
     border: none;
     border-radius: 4px;
     cursor: pointer;
