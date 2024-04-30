@@ -18,11 +18,3 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     console.log(Date.now(), "Selected text: ", selectedText);
   }
 });
-
-chrome.tabs.onCreated.addListener(function(tab) {
-  // Check if the tab is a blank new tab
-  if (tab.url === 'chrome://newtab/' || tab.url === '') {
-    chrome.tabs.update(tab.id, {url: chrome.runtime.getURL("index.html")});
-  }
-});
-
