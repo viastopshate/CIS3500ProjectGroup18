@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { WebsiteList } from './WebsiteList';
-import { Chromagotchi } from '../Chromagotchi';
-import usagiImage from '../avatar-images/usagi.jpg';
-import chiikawaImage from '../avatar-images/chiikawa.jpg';
-import { SummaryStats } from './SummaryStats';
-import uploadImage from './upload.jpg';
+import { WebsiteList } from './landing-page/WebsiteList';
+import { Chromagotchi } from './Chromagotchi';
+import usagiImage from './avatar-images/usagi.jpg';
+import chiikawaImage from './avatar-images/chiikawa.jpg';
+import { SummaryStats } from './landing-page/SummaryStats';
+import uploadImage from './landing-page/upload.jpg';
 import './Landingpage.css';
 
 // Initial list of websites
