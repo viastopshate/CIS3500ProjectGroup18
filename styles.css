@@ -1,0 +1,80 @@
+
+/* General body and container styles for a modern, clean appearance */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9; /* Lighter shade for a fresher look */
+}
+
+#pet-container {
+  text-align: center;
+  background-color: #fff; /* Crisp white background */
+  padding: 25px; /* Increased padding for better spacing */
+  border-radius: 12px; /* Slightly larger radius for a softer edge */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* More pronounced shadow for depth */
+}
+
+#pet-name {
+  font-size: 24px; /* Larger text for better readability */
+  color: #333; /* Dark gray for better contrast and readability */
+}
+
+#pet-image {
+  width: 100%; /* Ensure it's always fully responsive */
+  height: auto;
+  margin: 20px 0; /* Increased spacing for visual separation */
+}
+
+#progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Utilize space more efficiently */
+  margin: 20px 0; /* Increased margin for clear separation */
+}
+
+progress {
+  flex: 1; /* Take available space, respecting margins */
+  height: 25px; /* Increased height for better visibility */
+}
+
+span#progress-value {
+  font-size: 1em; /* Adjusted font size for uniformity */
+  font-weight: 600; /* Boldness for emphasis */
+  margin-left: 10px; /* Ensure spacing from progress bar */
+}
+
+button#settings {
+  padding: 12px 24px; /* More padding for a better touch target */
+  background-color: #0056b3; /* Slightly darker blue for better visibility */
+  color: #fff;
+  border-radius: 6px; /* Softened edges */
+  cursor: pointer;
+  font-size: 16px; /* Larger font size for easier interaction */
+  margin-top: 15px; /* More top margin for spacing */
+  transition: background-color 0.3s; /* Smooth transition for interactive effects */
+}
+
+button#settings:hover {
+  background-color: #004099; /* Darker on hover for interactive feedback */
+}
+
+/* Enhanced styles for tabs information display */
+#tabs-info {
+  background-color: #e0e0e0; /* Slightly darker background for contrast */
+  padding: 15px; /* More padding for better content separation */
+  border-radius: 8px; /* Consistent with other elements */
+  text-align: left;
+}
+
+#tabs-info div {
+  margin-bottom: 10px; /* Increased bottom margin for better readability */
+}
+
+#tabs-info div:last-child {
+  margin-bottom: 0; /* Maintain no margin at the bottom of the last div */
+}
