@@ -1,0 +1,22 @@
+.button {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue shade */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .button:hover, .button:focus {
+    background-color: #0056b3; /* Darker blue shade */
+    transform: scale(1.05);
+    outline: none; /* Removes the outline to keep the style clean */
+  }
+  
+  .button:active {
+    background-color: #004080; /* Even darker blue when the button is clicked */
+    transform: scale(0.95);
+  }
+  
