@@ -10,7 +10,12 @@
     "192": "images/android-chrome-192x192.png",
     "512": "images/android-chrome-512x512.png"
   },
-  "permissions": ["storage", "activeTab", "contextMenus", "tabs"],
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "storage",
+    "activeTab"
+  ],
   "background": {
     "service_worker": "background.js"
   },

@@ -15,3 +15,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     console.log(Date.now(), "Selected text: ", selectedText);
   }
 });
+
+// Listen for messages from other parts of the extension
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log("Received message:", request);
+    if (request.action === "openLandingPage") {
+      chrome.tabs.create({ url: chrome.runtime.getURL('index.html') });
+    }
+  }
+);
