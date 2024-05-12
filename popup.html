@@ -1,27 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Current Tab Info</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 8px; }
-    #tabInfo, #urlsList { margin-top: 10px; }
-    #urlsList { margin-top: 20px; }
-    h2 { margin-top: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 8px;
+      background-color: #CBC3E3; /* Set background color to purple */
+    }
+    #tabInfo, #urlTimes, #healthBar {
+      margin-top: 10px;
+    }
+    #healthBar {
+      width: 100%; /* Full width container for health bar */
+      height: 20px;
+      background-color: green; /* Background of the health bar */
+      margin-top: 20px;
+      text-align: center;
+      color: white;
+    }
+    #currentHealth {
+      height: 100%;
+      background-color: green; /* Green health bar */
+      width: 0%; /* Initial width, will be set by JavaScript */
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    img {
+      display: block; /* Ensure the image is a block to align properly */
+      margin-top: 20px;
+      max-width: 100%; /* Make sure the image is responsive */
+    }
+    .info-text {
+      font-size: 0.8em;
+      color: #ddd;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <h1>Current Tab</h1>
   <div id="tabInfo">Loading...</div>
-  <button id="printButton">Print Tab Info</button>
+  <img id="dogImage" src="dog.png" alt="Cute dog"> <!-- Displaying the dog image -->
 
-<!--   <h2>Visited URLs</h2>
-  <div id="visitedUrlsList">Visited URLs:</div> <!-- Div to display visited URLs --> -->
-
-  <h2>URL Visit Time Differences</h2>
-  <div id="urlTimes">Loading time differences...</div> 
+  <div id="healthBar">
+    <div id="currentHealth">Health: 0%</div> <!-- Health bar for Chromagotchi -->
+  </div>
   
+  <h2>Good & Bad Time</h2>
+  <div id="displayTimes">Loading time ...</div>
+
+  
+<h2>Usage Statistics</h2>
+  <div id="urlTimes">Loading time differences...</div>
   <script src="popup.js"></script>
 </body>
 </html>
