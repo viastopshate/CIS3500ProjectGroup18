@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client'; // Change this import for React 18
 import './index.css';
-import Landingpage from './Landingpage';
+import Landingpage from '../Landingpage';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root')); // Use createRoot for React 18
+root.render(
   <React.StrictMode>
     <Landingpage />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

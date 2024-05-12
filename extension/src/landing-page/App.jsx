@@ -5,7 +5,7 @@ import usagiImage from '../avatar-images/usagi.jpg';
 import chiikawaImage from '../avatar-images/chiikawa.jpg';
 import { SummaryStats } from './SummaryStats';
 import uploadImage from './upload.jpg';
-import './Landingpage.css';
+import '../Landingpage.css';
 
 // Initial list of websites
 const initialWebsites = [

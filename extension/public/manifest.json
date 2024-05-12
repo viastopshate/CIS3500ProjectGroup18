@@ -28,9 +28,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["index.html", "popup.html"],
+      "resources": ["dist/*.js", "dist/*.html"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' ; object-src 'self';"
+  }
 }
 
