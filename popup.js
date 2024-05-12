@@ -1,40 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const infoDiv = document.getElementById('tabInfo');
     const healthBar = document.getElementById('healthBar');
     const goodTimeSpentDisplay = document.getElementById('goodTimeSpent');
     const badTimeSpentDisplay = document.getElementById('badTimeSpent');
     const urlTimes = document.getElementById('urlTimes');
     const displayTimes = document.getElementById('displayTimes');
 
-    const goodUrls = ['www.linkedin.com', 'www.tradingview.com']; // Array of good URLs
-    const badUrls = ['www.instagram.com', 'www.youtube.com']; // Array of bad URLs
+    const goodUrls = ['www.linkedin.com', 'www.tradingview.com'];
+    const badUrls = ['www.instagram.com', 'www.youtube.com'];
 
     function updateTabInfo() {
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            let currentTab = tabs[0];
-            if (currentTab) {
-                let parsedUrl = new URL(currentTab.url).hostname; // Parse and get the hostname
-                infoDiv.textContent = `Title: ${currentTab.title}\nURL: ${parsedUrl}`;
-
-                chrome.storage.local.get({visitedUrls: []}, function(result) {
-                    const visitedUrls = result.visitedUrls;
-                    visitedUrls.push({title: currentTab.title, url: parsedUrl, time: new Date().toISOString()});
-
-                    chrome.storage.local.set({visitedUrls: visitedUrls}, function() {
-                        displayUrlTimesAndUpdateHealth(visitedUrls);
-                    });
-                });
+        chrome.storage.local.get({visitedUrls: []}, function(result) {
+            if (result.visitedUrls && result.visitedUrls.length > 0) {
+                console.log('Retrieved visited URLs:', result.visitedUrls);
+                calculateAndDisplayTimes(result.visitedUrls);
             } else {
-                infoDiv.textContent = 'No active tab found or URL is not trackable.';
+                console.log('No visited URLs found.');
             }
         });
     }
 
-    function displayUrlTimesAndUpdateHealth(visitedUrls) {
+    function calculateAndDisplayTimes(visitedUrls) {
         let totalSeconds = 0;
         let goodTimeSpent = 0;
         let badTimeSpent = 0;
         const urlMap = new Map();
+
+        if (visitedUrls.length === 0) {
+            console.log('No URLs to process.');
+        }
 
         visitedUrls.forEach((urlInfo, index) => {
             if (!urlMap.has(urlInfo.url)) {
@@ -59,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateChromagotchiHealth(goodTimeSpent, badTimeSpent);
         displayVisitedTimes(urlMap, goodTimeSpent, badTimeSpent);
-    }
+     }
 
     function updateChromagotchiHealth(goodTimeSpent, badTimeSpent) {
         let baseHealth = 50;
