@@ -18,23 +18,32 @@
 
 ## Usage
 
-Chromagotchi has two main components: the popup and the landing page.
-
 ### Popup
 
-1. Click on the Chromagotchi icon in the Chrome toolbar to open the popup.
-2. The popup displays your Chromagotchi and its current health status.
-3. Use the "Star" button to star the current website and reward your Chromagotchi's health when using that tab.
-4. Click the "Menu" button to access the landing page.
+- The popup displays your Chromagotchi and its current health status, which is influenced by your browsing behavior.
+- Use the "Star" button to star important websites. Spending time on starred websites will increase your Chromagotchi's health, while non-starred websites will decrease it.
 
 ### Landing Page
 
-1. On the landing page, you can view your website usage statistics, including time spent on each website and total usage time.
-2. Customize your Chromagotchi by selecting a pre-designed avatar or uploading your own image (less than 1MB).
+- The landing page provides an overview of your website usage statistics and allows you to customize your Chromagotchi.
+- Keep in mind that opening new tabs will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively.
 
-Chromagotchi automatically records your website usage time whenever you open a new tab, so you can focus on your browsing while the extension tracks your activity.
+### Health System
+
+Chromagotchi incorporates a health system that reflects your browsing behavior and encourages productive habits:
+
+- Spending time on starred websites increases health by 2 points every 5 minutes.
+- Viewing non-starred websites decreases health by 1 point every 5 minutes.
+- Opening a new tab decreases health by 2 points.
 
 ## Configuration
+
+Chromagotchi provides a few configuration options to customize your experience:
+
+- Avatar selection: Choose from a set of pre-designed avatars or upload your own image (less than 1MB) to personalize your Chromagotchi.
+- Reset progress: If needed, you can reset your Chromagotchi's progress and start fresh with default settings.
+
+Configuration options can be accessed through the landing page of the extension.
 
 ## Development
 
