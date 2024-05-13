@@ -19,14 +19,12 @@ export function AddWebsite({ addWebsite }) {
 
   return (
     <div className="add-website">
-      {/* Input field for the website name */}
       <input
         type="text"
         placeholder="Enter website name"
         value={websiteName}
         onChange={(e) => setWebsiteName(e.target.value)}
       />
-      {/* Button to add the website */}
       <button onClick={handleAddWebsite}>Add Website</button>
     </div>
   );
