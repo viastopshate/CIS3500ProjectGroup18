@@ -30,6 +30,12 @@
 3. Open Chrome and navigate to `chrome://extensions` and Enable "Developer mode".
 4. Click 'load unpacked', navigate over to the dist/ folder then open it.
 
+## Installation w/ Zip File
+1. Download the zip file via this link: https://drive.google.com/file/d/1Zz48JgPxDVetA9NWQ2V4jEGwt24RzqOU/view?usp=sharing.
+2. Unzip the file on your computer.
+3. Open Chrome and navigate to `chrome://extensions` and Enable "Developer mode".
+4. Click 'load unpacked', navigate over to the dist/ folder then open it.
+
 ## Usage
 
 ### Popup
