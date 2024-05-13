@@ -36,6 +36,11 @@
 
 - The popup displays your Chromagotchi and its current health status, which is influenced by your browsing behavior.
 - Use the "Star" button to star important websites. Spending time on starred websites will increase your Chromagotchi's health, while non-starred websites will decrease it.
+- Screenshot of Pop-up:
+- <img width="391" alt="Screen Shot 2024-05-13 at 11 59 41 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/25207ec7-d028-4bb8-98b8-57873d8a06a2">
+- Screenshot of Landing Page:
+- <img width="391" alt="Screen Shot 2024-05-13 at 11 59 41 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/4a3f76c8-d6fc-4c8c-b0d8-7ff705cfe3ac">
+
 
 ### Landing Page
 
