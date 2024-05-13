@@ -1,3 +1,4 @@
+// This component represents the main application, handling website tracking, health, and avatar selection.
 import React, { useState, useEffect, useRef } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from '../Chromagotchi';
@@ -10,7 +11,7 @@ import emoImage from '../avatar-images/EMO.png';
 import robotImage from '../avatar-images/ROBOT.png';
 import './App.css';
 
-// Initial list of websites
+// Initial list of websites (deprecated)
 const initialWebsites = [
   { id: 1, name: 'Google', timeOpened: Date.now(), isOnTask: true },
   { id: 2, name: 'Gmail', timeOpened: Date.now(), isOnTask: true },
@@ -27,19 +28,21 @@ export default function App() {
   const [avatarImages, setAvatarImages] = useState([babyImage, bunnyImage,cuteImage, emoImage, robotImage]);
   const fileInputRef = useRef(null);
 
+  // useEffect to update health based on on-task websites every 10 minutes
   useEffect(() => {
     const timer = setInterval(() => {
       const onTaskCount = websites.filter((website) => website.isOnTask).length;
       const newHealth = (prevHealth) => Math.max(0, prevHealth - onTaskCount)
       setHealth(newHealth);
       chrome.storage.local.set({ health: newHealth });
-    }, 600000); // 10 minutes in milliseconds
+    }, 600000); 
 
     return () => {
       clearInterval(timer);
     };
   }, [websites]);
 
+  // useEffect to load avatar images from local storage or set default images
   useEffect(() => {
     if (localStorage.getItem('images')) {
       const result = JSON.parse(localStorage.getItem('images'));
@@ -61,7 +64,7 @@ export default function App() {
     });
   }, []);
 
-  // Function to toggle the task status of a website
+  // Function to toggle the task status of a website (deprecated in final version)
   const toggleTaskStatus = (websiteId) => {
     const updatedWebsites = websites.map(website => {
       if (website.id === websiteId) {
@@ -75,7 +78,7 @@ export default function App() {
     setWebsites(updatedWebsites);
   };
 
-  // Function to add a new website
+  // Function to add a new website (deprecated in final version)
   const addWebsite = (name, timeOpened, isOnTask) => {
     const newWebsite = {
       id: Date.now(),
@@ -87,13 +90,14 @@ export default function App() {
     setHealth(Math.max(0, health - 2));
   };
 
-  // Function to remove a website
+  // Function to remove a website (deprecated in final version)
   const removeWebsite = (websiteId) => {
     const updatedWebsites = websites.filter((website) => website.id !== websiteId);
     setWebsites(updatedWebsites);
     setHealth((prevHealth) => Math.min(100, prevHealth + 2)); 
   };
   
+  // Function to change the current avatar image
   const changeAvatar = (direction) => {
     setCurrentAvatarIndex((prevIndex) => {
       const newIndex = prevIndex + direction;
@@ -103,6 +107,7 @@ export default function App() {
     });
   };
 
+  // Function to calculate summary statistics
   const calculateSummaryStats = () => {
     const currentTime = Date.now();
     const onTaskTime = websites
@@ -115,6 +120,7 @@ export default function App() {
     return { onTaskTime, offTaskTime };
   };
 
+  // Function to handle image upload for the avatar
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
