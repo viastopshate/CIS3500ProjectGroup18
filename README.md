@@ -1,8 +1,8 @@
-# Chromagotchi: A Tamagotchi-like Chrome Extension for Website Usage Tracking
+# Chromagotchi
 
 ## Table of Contents
 
-- [Chromagotchi: A Tamagotchi-like Chrome Extension for Website Usage Tracking](#chromagotchi-a-tamagotchi-like-chrome-extension-for-website-usage-tracking)
+- [Chromagotchi](#chromagotchi)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
