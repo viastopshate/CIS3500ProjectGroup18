@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from '../Chromagotchi';
-import chiikawaImage from '../avatar-images/chiikawa.jpg';
 import { SummaryStats } from './SummaryStats';
 import uploadImage from './upload.jpg';
-import babyImage from '..avatar-images/BABY.png';
+import babyImage from '../avatar-images/BABY.png';
 import bunnyImage from '../avatar-images/BUNNY.png';
 import cuteImage from '../avatar-images/CUTE.png';
 import emoImage from '../avatar-images/EMO.png';
 import robotImage from '../avatar-images/ROBOT.png';
-import '../Landingpage.css';
+import './App.css';
 
 // Initial list of websites
 const initialWebsites = [
@@ -20,12 +19,11 @@ const initialWebsites = [
   { id: 5, name: 'Netflix', timeOpened: Date.now(), isOnTask: false },
 ];
 
-export default function Landingpage() {
+export default function App() {
   // State variables for websites and health
   const [websites, setWebsites] = useState(initialWebsites);
   const [currentAvatarIndex, setCurrentAvatarIndex] = useState(0);
   const [health, setHealth] = useState(100);
-  const [uploadedImage, setUploadedImage] = useState(null);
   const [avatarImages, setAvatarImages] = useState([babyImage, bunnyImage,cuteImage, emoImage, robotImage]);
   const fileInputRef = useRef(null);
 
@@ -43,9 +41,14 @@ export default function Landingpage() {
   }, [websites]);
 
   useEffect(() => {
-    const savedUploadedImage = localStorage.getItem('uploadedImage');
-    if (savedUploadedImage) {
-      setUploadedImage(savedUploadedImage);
+    if (localStorage.getItem('images')) {
+      const result = JSON.parse(localStorage.getItem('images'));
+      setAvatarImages(result.list);
+      setCurrentAvatarIndex(result.index);
+    } else {
+      setAvatarImages([babyImage, bunnyImage,cuteImage, emoImage, robotImage]);
+      setCurrentAvatarIndex(0);
+      localStorage.setItem('images', JSON.stringify({ index: 0, list: [babyImage, bunnyImage,cuteImage, emoImage, robotImage] }));
     }
   }, []);
 
@@ -92,15 +95,12 @@ export default function Landingpage() {
   };
   
   const changeAvatar = (direction) => {
-    if (uploadedImage) {
-      setUploadedImage(null);
-      setCurrentAvatarIndex(direction === 1 ? 0 : avatarImages.length - 1);
-    } else {
-      setCurrentAvatarIndex((prevIndex) => {
-        const newIndex = prevIndex + direction;
-        return newIndex >= 0 ? newIndex % avatarImages.length : avatarImages.length - 1;
-      });
-    }
+    setCurrentAvatarIndex((prevIndex) => {
+      const newIndex = prevIndex + direction;
+      const index = newIndex >= 0 ? newIndex % avatarImages.length : avatarImages.length - 1;
+      localStorage.setItem('images', JSON.stringify({ index: index, list: avatarImages }))
+      return index;
+    });
   };
 
   const resetChromagotchi = () => {
@@ -126,9 +126,12 @@ export default function Landingpage() {
       const reader = new FileReader();
       reader.onload = () => {
         const dataURL = reader.result;
-        setUploadedImage(dataURL);
-        setAvatarImages([...avatarImages, dataURL]);
+        const list = [...avatarImages, dataURL];
+        setAvatarImages(list);
+        setCurrentAvatarIndex(list.length - 1);
+
         localStorage.setItem('uploadedImage', dataURL);
+        localStorage.setItem('images', JSON.stringify({ index: list.length - 1, list: list }))
       };
       reader.readAsDataURL(file);
     }
@@ -152,14 +155,14 @@ export default function Landingpage() {
         <div className="tamagotchi-container">
           <Chromagotchi
             health={health}
-            avatarImage={uploadedImage || avatarImages[currentAvatarIndex]}
+            avatarImage={avatarImages[currentAvatarIndex]}
           />
           <div className="avatar-selection">
             <h3>Choose your Chromagotchi</h3>
+            <p className="upload-reminder">Please upload an image smaller than 1MB.</p>
             <div className="avatar-buttons">
               <button onClick={() => changeAvatar(-1)}>Prev</button>
               <button onClick={() => changeAvatar(1)}>Next</button>
-              <button onClick={resetChromagotchi}>Reset</button>
             </div>
             <div className="upload-button">
               <img src={uploadImage} alt="Upload" onClick={() => fileInputRef.current.click()} />
