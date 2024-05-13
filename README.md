@@ -44,7 +44,7 @@
 ### Landing Page
 
 - The landing page provides an overview of your website usage statistics and allows you to customize your Chromagotchi.
-- Keep in mind that opening new tabs will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively.
+- Keep in mind that opening new tabs that are not starred will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively. On the other hand, using tabs that are starred will boost health, incentivizing users to stay on task. 
 - - Screenshot of Landing Page:
 - <img width="1385" alt="Screen Shot 2024-05-13 at 11 59 55 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/f64cea0e-a2ca-4fde-9610-629188ceec08">
 
@@ -101,4 +101,4 @@ For any questions, feedback, or inquiries, please feel free to reach out:
 - Name: Via Liu
 - Email: bangchel@sas.upenn.edu
 
-We appreciate your interest in Europia and look forward to hearing from you!
+We appreciate your interest in Chromagotchi and look forward to hearing from you!
