@@ -38,14 +38,15 @@
 - Use the "Star" button to star important websites. Spending time on starred websites will increase your Chromagotchi's health, while non-starred websites will decrease it.
 - Screenshot of Pop-up:
 - <img width="391" alt="Screen Shot 2024-05-13 at 11 59 41 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/25207ec7-d028-4bb8-98b8-57873d8a06a2">
-- Screenshot of Landing Page:
-- <img width="1385" alt="Screen Shot 2024-05-13 at 11 59 55 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/f64cea0e-a2ca-4fde-9610-629188ceec08">
+
 
 
 ### Landing Page
 
 - The landing page provides an overview of your website usage statistics and allows you to customize your Chromagotchi.
 - Keep in mind that opening new tabs will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively.
+- - Screenshot of Landing Page:
+- <img width="1385" alt="Screen Shot 2024-05-13 at 11 59 55 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/f64cea0e-a2ca-4fde-9610-629188ceec08">
 
 ### Health System
 
