@@ -23,7 +23,6 @@ export function WebsiteItem({ name, timeOpened, isOnTask, toggleTaskStatus, remo
   return (
     <li>
       <div className="website-info">
-        {/* Display the website name */}
         <h3>{name}</h3>
         {/* Display the time since the website was opened */}
         <span className="time-opened">{getTimeSinceOpened()}</span>

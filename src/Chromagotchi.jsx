@@ -6,6 +6,7 @@ export function Chromagotchi({ health, avatarImage }) {
   const [goal, setGoal] = useState(100);
   const [avatar, setAvatarImage] = useState(null);
 
+  // Function to update the goal and avatar image
   useEffect(() => {
     const update = async () => {
       const result = await getGoal();
@@ -16,7 +17,11 @@ export function Chromagotchi({ health, avatarImage }) {
       }
     };
     update();
+
+    // Flag to track if the component is unmounted
     let isDestroy = false;
+
+    // Recursive loop to continuously update the goal and avatar image
     const loop = async () => {
       if (!isDestroy) {
         await Promise.all([update(), sleep(1000)]);
@@ -24,7 +29,11 @@ export function Chromagotchi({ health, avatarImage }) {
       }
     };
     loop();
+
+    // Add a listener to update when a new tab is activated
     chrome.tabs.onActivated.addListener(update);
+
+    // Clean up the listener when the component is unmounted
     return () => {
       isDestroy = true;
       chrome.tabs.onActivated.removeListener(update);
