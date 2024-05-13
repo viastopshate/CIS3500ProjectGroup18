@@ -25,11 +25,10 @@
 
 ## Installation
 
-1. Download the latest release from the [Releases](http://google.com) page.
-2. Unzip the downloaded ZIP file.
-3. Open Chrome and navigate to `chrome://extensions`.
-4. Enable "Developer mode".
-5. Drag and drop the unzipped folder into the extensions page.
+1. Clone the CIS3500ProjectGroup18 repo into your downloads folder.
+2. Run "npm install" and "npm run build"
+3. Open Chrome and navigate to `chrome://extensions` and Enable "Developer mode".
+4. Click 'load unpacked', navigate over to the dist/ folder then open it.
 
 ## Usage
 
