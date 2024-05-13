@@ -103,11 +103,6 @@ export default function App() {
     });
   };
 
-  const resetChromagotchi = () => {
-    setWebsites(initialWebsites);
-    setHealth(90);
-  };
-
   const calculateSummaryStats = () => {
     const currentTime = Date.now();
     const onTaskTime = websites

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { WebsiteItem } from './WebsiteItem';
 import './WebsiteList.css';
-import { AddWebsite } from './AddWebsite';
 
 export function WebsiteList({ websites, toggleTaskStatus, removeWebsite, addWebsite }) {
   // Filter websites based on their task status

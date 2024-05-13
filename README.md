@@ -1,5 +1,20 @@
 # Chromagotchi: A Tamagotchi-like Chrome Extension for Website Usage Tracking
 
+## Table of Contents
+
+- [Chromagotchi: A Tamagotchi-like Chrome Extension for Website Usage Tracking](#chromagotchi-a-tamagotchi-like-chrome-extension-for-website-usage-tracking)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Popup](#popup)
+    - [Landing Page](#landing-page)
+    - [Health System](#health-system)
+  - [Configuration](#configuration)
+  - [Technical Overview](#technical-overview)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
+
 ## Features
 
 - Automatic website usage tracking
@@ -45,12 +60,40 @@ Chromagotchi provides a few configuration options to customize your experience:
 
 Configuration options can be accessed through the landing page of the extension.
 
-## Development
+## Technical Overview
+
+Chromagotchi is built using React, a popular JavaScript library for building user interfaces. The project structure is organized as follows:
+
+- `public` folder:
+
+ - Contains configuration files for the Chrome extension.
+ - `background.js`: Implements the background script for the extension, handling tab events and communication with the content script.
+ - `index.html`: The main HTML file for the extension's landing page.
+ - `popup.html`: Serves as the entry point for the extension's popup, providing a portal to display the popup content.
+ - `manifest.json`: Defines the extension's metadata, permissions, and other configuration details.
+
+- `src` folder:
+  - Contains the source code for the extension's components and functionality.
+  - `popup` folder:
+    - Implements the extension's popup component.
+    - Includes JSX files for the popup's structure and logic.
+    - Uses CSS files for styling the popup.
+  - `landing-page` folder:
+    - Implements the extension's landing page component.
+    - Includes JSX files for the landing page's structure and logic.
+    - Uses CSS files for styling the landing page.
+    - `utils.js`: Contains utility functions, including the implementation of the health system.
+    - `WebsiteList.js`: Handles time tracking functionality and displays the list of websites visited by the user.
 
 ## Contributing
 
-## Credits
-
-## License
+Clara Fee, John Otto, Laya Yalamanchili, Via Liu
 
 ## Contact
+
+For any questions, feedback, or inquiries, please feel free to reach out:
+
+- Name: Via Liu
+- Email: bangchel@sas.upenn.edu
+
+We appreciate your interest in Europia and look forward to hearing from you!
