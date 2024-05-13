@@ -27,6 +27,7 @@ export default function App() {
     });
   }, []);
 
+  // Fetch the current tab URL and star domains from chrome storage
   useEffect(() => {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       let currentUrl = tabs[0]?.url;
@@ -39,6 +40,7 @@ export default function App() {
     });
   }, []);
 
+  // Check if the current URL is starred
   const isStar = useMemo(() => {
     if (!url) {
       return false;
@@ -52,11 +54,13 @@ export default function App() {
     },
     star: () => {
       if (isStar) {
+        // Remove the URL from the star list if already starred
         chrome.storage.local.set({
           starDomains: starList.filter(item => item !== url)
         });
         setStarList(starList.filter(item => item !== url));
       } else {
+        // Add the URL to the star list if not starred
         chrome.storage.local.set({
           starDomains: [...starList, url]
         });

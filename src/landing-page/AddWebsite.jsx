@@ -5,7 +5,6 @@ import './AddWebsite.css';
 instead of creating and deleting tabs.
 */
 
-
 export function AddWebsite({ addWebsite }) {
   const [websiteName, setWebsiteName] = useState('');
 

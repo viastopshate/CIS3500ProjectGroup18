@@ -4,7 +4,13 @@
   "version": "1.0",
   "description": "A productivity tool that motivates you with a digital pet!",
   "icons": {
-    "128": "../src/avatar-images/CUTE.png"
+    "16": "images/bunny16.png",
+    "32": "images/bunny32.png",
+    "48": "images/bunny48.png",
+    "128": "images/bunny128.png",
+    "180": "images/bunny180.png",
+    "192": "images/bunny192.png",
+    "512": "images/bunny512.png"
   },
   "permissions": [
     "tabs",
@@ -18,8 +24,10 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "../src/avatar-images/CUTE.png",
-      "32": "../src/avatar-images/CUTE.png"
+      "16": "images/bunny16.png",
+      "32": "images/bunny32.png",
+      "48": "images/bunny48.png",
+      "128": "images/bunny128.png"
     }
   },
   "web_accessible_resources": [
