@@ -67,33 +67,22 @@
 - The popup displays your Chromagotchi and its current health status, which is influenced by your browsing behavior.
 - Use the "Star" button to star important websites. Spending time on starred websites will increase your Chromagotchi's health, while non-starred websites will decrease it.
 - Screenshot of Pop-up:
-- <img width="391" alt="Screen Shot 2024-05-13 at 11 59 41 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/25207ec7-d028-4bb8-98b8-57873d8a06a2">
-
-
+<img width="391" alt="screenshot-popup" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/popup.png">
 
 ### Landing Page
 
 - The landing page provides an overview of your website usage statistics and allows you to customize your Chromagotchi.
 - Keep in mind that opening new tabs that are not starred will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively. On the other hand, using tabs that are starred will boost health, incentivizing users to stay on task. 
 - - Screenshot of Landing Page:
-- <img width="1385" alt="Screen Shot 2024-05-13 at 11 59 55 AM" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/108373760/f64cea0e-a2ca-4fde-9610-629188ceec08">
+<img width="1385" alt="screenshot-landing" src="https://github.com/viastopshate/CIS3500ProjectGroup18/assets/landing.png">
 
 ### Health System
 
-Chromagotchi incorporates a health system that reflects your browsing behavior and encourages productive habits:
-
-- Spending time on starred websites increases health by 2 points every 5 minutes.
-- Viewing non-starred websites decreases health by 1 point every 5 minutes.
-- Opening a new tab decreases health by 2 points.
+Chromagotchi incorporates a health system that reflects your browsing behavior and encourages productive habits. Spending time on starred websites increases health score, while viewing non-starred websites decreases health. Similalry, opening a new tab decreases your Chromagotchi's health score.
 
 ## Configuration
 
-Chromagotchi provides a few configuration options to customize your experience:
-
-- Avatar selection: Choose from a set of pre-designed avatars or upload your own image (less than 1MB) to personalize your Chromagotchi.
-- Reset progress: If needed, you can reset your Chromagotchi's progress and start fresh with default settings.
-
-Configuration options can be accessed through the landing page of the extension.
+Chromagotchi provides a few configuration options to customize your experience. We allow users to choose from a set of pre-designed avatars or upload your own image (less than 1MB) to personalize your Chromagotchi. Configuration options can be accessed through the landing page of the extension.
 
 ## Technical Overview
 
