@@ -38,13 +38,13 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/jlumbroso/chrome-extension-text-collector
+   git clone https://github.com/viastopshate/CIS3500ProjectGroup18
    ```
 
 2. Install dependencies:
 
    ```bash
-   cd chrome-extension-text-collector
+   cd CIS3500ProjectGroup18
    npm install
    ```
 
