@@ -32,7 +32,7 @@ export function WebsiteList({ websites, toggleTaskStatus, removeWebsite, addWebs
   return (
     <div className="website-list">
       <div className="list-container">
-        <h2>Websites</h2>
+        <h2>Current Websites</h2>
         {records.map(record => (
           <div className='website-item'>
             {/* Display a star icon if the website domain is starred */}

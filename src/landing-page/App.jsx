@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { WebsiteList } from './WebsiteList';
 import { Chromagotchi } from '../Chromagotchi';
 import { SummaryStats } from './SummaryStats';
-import uploadImage from './upload.jpg';
+import uploadImage from './upload.png';
 import babyImage from '../avatar-images/BABY.png';
 import bunnyImage from '../avatar-images/BUNNY.png';
 import cuteImage from '../avatar-images/CUTE.png';
@@ -144,23 +144,25 @@ export default function App() {
         <h1 className="header">Welcome to Chromagotchi!</h1>
       </header>
       <div className="content">
-        <div className="website-lists">
-          <WebsiteList
-            websites={websites}
-            toggleTaskStatus={toggleTaskStatus}
-            removeWebsite={removeWebsite}
-            addWebsite={addWebsite}
-          />
+        <div className="left-column">
+          <SummaryStats {...calculateSummaryStats()} />
+          <div className="website-lists">
+            <WebsiteList
+              websites={websites}
+              toggleTaskStatus={toggleTaskStatus}
+              removeWebsite={removeWebsite}
+              addWebsite={addWebsite}
+            />
+          </div>
         </div>
-        <SummaryStats {...calculateSummaryStats()} />
         <div className="tamagotchi-container">
           <Chromagotchi
             health={health}
             avatarImage={avatarImages[currentAvatarIndex]}
           />
           <div className="avatar-selection">
-            <h3>Choose your Chromagotchi</h3>
-            <p className="upload-reminder">Please upload an image smaller than 1MB.</p>
+            <h3>Choose Your Chromagotchi Avatar!</h3>
+            <p className="upload-reminder">Please upload an image smaller than 1MB</p>
             <div className="avatar-buttons">
               <button onClick={() => changeAvatar(-1)}>Prev</button>
               <button onClick={() => changeAvatar(1)}>Next</button>
@@ -179,5 +181,5 @@ export default function App() {
         </div>
       </div>
     </div>
-  );
+);
 }

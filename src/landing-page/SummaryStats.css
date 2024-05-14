@@ -2,13 +2,14 @@
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 0px;
     text-align: center;
   }
   
   .summary-stats h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
   }
   
   .stat-item {
@@ -27,5 +28,5 @@
   .stat-value {
     font-size: 18px;
     font-weight: bold;
-    color: #4caf50;
+    color: #c675f1;
   }

@@ -26,9 +26,9 @@ export function SummaryStats({ onTaskTime, offTaskTime }) {
   }, []);
   return (
     <div className="summary-stats">
-      <h2>Summary Stats</h2>
+      <h2>Stat Summary</h2>
       <div className="stat-item">
-        <span className="stat-label">Total Time:</span>
+        <span className="stat-label">Time On Task:</span>
         {/* Display the total time in seconds */}
         <span className="stat-value">{parseInt(sum / 1000)}s</span>
       </div>
