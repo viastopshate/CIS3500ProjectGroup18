@@ -25,16 +25,40 @@
 
 ## Installation
 
-1. Clone the CIS3500ProjectGroup18 repo into your downloads folder.
-2. Run "npm install" and "npm run build"
-3. Open Chrome and navigate to `chrome://extensions` and Enable "Developer mode".
-4. Click 'load unpacked', navigate over to the dist/ folder then open it.
+### Install From Release
 
-## Installation w/ Zip File
-1. Download the zip file via this link: https://drive.google.com/file/d/1Zz48JgPxDVetA9NWQ2V4jEGwt24RzqOU/view?usp=sharing.
-2. Unzip the file on your computer.
-3. Open Chrome and navigate to `chrome://extensions` and Enable "Developer mode".
-4. Click 'load unpacked', navigate over to the dist/ folder then open it.
+- Download the latest release from the [Releases](https://github.com/viastopshate/CIS3500ProjectGroup18/releases)
+- Unzip the downloaded ZIP file
+- Open Chrome and navigate to `chrome://extensions`
+- Enable "Developer mode"
+- Drag and drop the unzipped folder into the extensions page
+
+### Install From Source
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jlumbroso/chrome-extension-text-collector
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   cd chrome-extension-text-collector
+   npm install
+   ```
+
+3. Build the extension:
+
+   ```bash
+   npm run build
+   ```
+
+4. Load the extension in Chrome:
+
+   - Open Chrome and navigate to `chrome://extensions`
+   - Enable "Developer mode"
+   - Click "Load unpacked" and select the `dist` directory from the project
 
 ## Usage
 
