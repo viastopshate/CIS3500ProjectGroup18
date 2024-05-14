@@ -4,6 +4,7 @@
 
 - [Chromagotchi](#chromagotchi)
   - [Table of Contents](#table-of-contents)
+  - [Landing Page](#landing-page)
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -18,6 +19,8 @@
 ## Landing Page
 
 To see our landing page for this project, click [here!](https://claraxfee.github.io/chromagotchi-landing-page/)
+
+This landing page includes a couple blog posts about our development journey for Chromagotchi. You can also access our demo video, which walks through the features and usage of Chromagotchi! Scroll down to the "Featured Pages" section of the above landind page to view these items, or click [here](https://youtu.be/_3sgMnn1zTU) to view our demo video directly!
 
 ## Features
 
