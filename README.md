@@ -15,6 +15,10 @@
   - [Contributing](#contributing)
   - [Contact](#contact)
 
+## Landing Page
+
+To see our landing page for this project, click [here!](https://claraxfee.github.io/chromagotchi-landing-page/)
+
 ## Features
 
 - Automatic website usage tracking
