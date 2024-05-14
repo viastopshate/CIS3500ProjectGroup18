@@ -27,7 +27,7 @@
 
 ### Install From Release
 
-- Download the latest release from the [Releases](https://github.com/viastopshate/CIS3500ProjectGroup18/releases)
+- Download the latest release (download-me.zip) from the [Releases](https://github.com/viastopshate/CIS3500ProjectGroup18/releases/tag/Latest)
 - Unzip the downloaded ZIP file
 - Open Chrome and navigate to `chrome://extensions`
 - Enable "Developer mode"
