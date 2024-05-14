@@ -13,7 +13,7 @@ import './App.css';
 export default function App() {
 
   const [health, setHealth] = useState(100);
-  const [uploadedImage, setUploadedImage] = useState("/images/usagi.jpg");
+  const [uploadedImage, setUploadedImage] = useState("/images/BABY.png");
   const [avatarImages, setAvatarImages] = useState([babyImage, bunnyImage,cuteImage, emoImage, robotImage]);
   const [starList, setStarList] = useState([]);
   const [url, setUrl] = useState('');
