@@ -4,6 +4,7 @@
 
 - [Chromagotchi](#chromagotchi)
   - [Table of Contents](#table-of-contents)
+  - [Landing Page](#landing-page)
   - [Features](#features)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -14,6 +15,12 @@
   - [Technical Overview](#technical-overview)
   - [Contributing](#contributing)
   - [Contact](#contact)
+
+## Landing Page
+
+To see our landing page for this project, click [here!](https://claraxfee.github.io/chromagotchi-landing-page/)
+
+This landing page includes a couple blog posts about our development journey for Chromagotchi. You can also access our demo video, which walks through the features and usage of Chromagotchi! Scroll down to the "Featured Pages" section of the above landind page to view these items, or click [here](https://youtu.be/_3sgMnn1zTU) to view our demo video directly!
 
 ## Features
 
@@ -27,7 +34,7 @@
 
 ### Install From Release
 
-- Download the latest release from the [Releases](https://github.com/viastopshate/CIS3500ProjectGroup18/releases)
+- Download the latest release (download-me.zip) from the [Releases](https://github.com/viastopshate/CIS3500ProjectGroup18/releases/tag/Latest)
 - Unzip the downloaded ZIP file
 - Open Chrome and navigate to `chrome://extensions`
 - Enable "Developer mode"
@@ -67,14 +74,14 @@
 - The popup displays your Chromagotchi and its current health status, which is influenced by your browsing behavior.
 - Use the "Star" button to star important websites. Spending time on starred websites will increase your Chromagotchi's health, while non-starred websites will decrease it.
 - Screenshot of Pop-up:
-<img width="391" alt="screenshot-popup" src="https://github.com/viastopshate/CIS3500ProjectGroup18/public/images/popup.png">
+<img width="391" alt="screenshot-popup" src="./public/images/popup.png">
 
 ### Landing Page
 
 - The landing page provides an overview of your website usage statistics and allows you to customize your Chromagotchi.
 - Keep in mind that opening new tabs that are not starred will decrease your Chromagotchi's health, encouraging you to manage your tabs effectively. On the other hand, using tabs that are starred will boost health, incentivizing users to stay on task. 
 - - Screenshot of Landing Page:
-<img width="1385" alt="screenshot-landing" src="https://github.com/viastopshate/CIS3500ProjectGroup18/public/images/landing.png">
+<img width="1385" alt="screenshot-landing" src="./public/images/landing.png">
 
 ### Health System
 
