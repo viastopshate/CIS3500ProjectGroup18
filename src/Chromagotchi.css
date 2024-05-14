@@ -1,3 +1,7 @@
+body {
+  font-family: 'Consolas', monospace; /* Default font */
+}
+
 .health-bar-container {
   display: flex;
   flex-direction: column;
@@ -5,26 +9,27 @@
 }
 
 .avatar {
-  width: 250px;
-  height: 300px;
-  margin-bottom: 10px;
+  width: 200px;  /* Adjusted to better fit the new design */
+  height: 200px; /* Made square to match the new avatar shape */
+  margin-bottom: 5px;
+  overflow: hidden;
 }
 
 .health-bar {
-  width: 150px;
-  height: 20px;
+  width: 170px; /* Made wider to match avatar width */
+  height: 24px; /* Made thinner for a sleeker look */
   background-color: #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 5px;
+  border-radius: 20px; /* More pronounced curve */
 }
 
 .health-bar-fill {
   height: 100%;
-  background-color: #4caf50;
+  background-color: #c675f1;
   transition: width 0.3s ease-in-out;
+  border-radius: 20px; /* Added to maintain rounded ends as the bar animates */
 }
 
 .health-value {
-  font-size: 16px;
+  font-size: 22px; /* Smaller font for a cleaner look */
+  color: #000000; /* Changed to white for visibility */
 }

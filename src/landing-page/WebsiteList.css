@@ -5,7 +5,6 @@
   
   .list-container {
     flex: 1;
-    margin: 0 10px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -21,6 +20,13 @@
     max-height: 300px; 
     margin-bottom: 10px;
   }
+
+  .website-list h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
 .website-item + .website-item {
   margin-top: 16px;
 }

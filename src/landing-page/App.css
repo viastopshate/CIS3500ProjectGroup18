@@ -1,31 +1,35 @@
+body {
+  font-family: 'Consolas', monospace; /* Default font */
+}
+
 .app {
-  background-color: #9370db;
-  padding: 20px;
+  background-color: #6a5acd; /* Adjusted shade of purple for a more subtle look */
+  padding: 30px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header {
   text-align: center;
-  font-size: 36px;
-  font-family: 'Comic Sans MS', cursive;
-  margin-bottom: 20px;
-}
-
-
-.content {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-  gap: 20px; 
+  font-size: 37px;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 45px;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-  align-items: center; 
+  justify-content: center; /* Center content for better balance */
+  gap: 20px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  width: 50%; /* Adjust based on your design needs */
+  margin-left: 40px;
 }
 
 .website-lists {
@@ -33,73 +37,95 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 20px;
-  max-width: 50%; 
-}
-
-.website-list {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
+  margin-top: 20px;
+  padding: 5px;
 }
 
 .list-container {
   flex: 1;
-  margin: 0 10px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: 600px;
+  padding: 15px; /* Slightly reduced padding */
+  background-color: #f8f8f8; /* Lighter shade for a cleaner look */
+  border-radius: 10px; /* Reduced border-radius */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtler shadow */
   overflow-y: auto;
 }
 
-.add-website {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
 .tamagotchi-container {
+  flex-grow: 1;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px; 
+  justify-content: start;
+  width: 300px;  /* Adjusted width to match design */
   margin-left: 20px;
+  margin-right: 40px;
+}
+
+.health-bar-container {
+  background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 0px;
+    text-align: center;
 }
 
 .avatar-selection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  text-align: center; /* Center align the text */
 }
 
-.avatar-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.avatar-selection h3 {
+  margin-bottom: 1px;
+  font-size: 19px;
 }
 
 .avatar-buttons button {
   margin: 0 5px;
+  padding: 10px 20px; /* Increased padding to make the button larger */
+  font-size: 18px; /* Larger font size for better readability */
+  border-radius: 8px; /* Slightly larger border-radius for a softer look */
+  background-color: #a8b2ff; /* Optional: background color change */
+  color: white; /* Optional: text color change for better contrast */
+  border: none; /* Optional: removing border for a cleaner look */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s; /* Smooth transition for visual feedback */
 }
 
-.upload-button {
+.avatar-buttons button:hover,
+.avatar-buttons button:focus {
+  background-color: #5537b8; /* Darker shade on hover/focus */
+  transform: scale(1.1); /* Slightly increase size on hover/focus for interaction feedback */
+}
+
+.avatar-buttons button:active {
+  background-color: #39208b; /* Even darker when the button is clicked */
+  transform: scale(0.95); /* Slightly reduce size when clicked */
+}
+
+
+.upload-button button {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin: 0 5px;
 }
 
 .upload-button img {
-  width: 40px;
-  height: 40px;
+  width: 25px; /* Smaller icon */
+  height: 19px; /* Smaller icon */
   cursor: pointer;
-  margin-left: 10px;
+  margin-top: 10px; 
+
+  padding: 10px 19px; /* Increased padding to make the button larger */
+  border-radius: 8px; /* Slightly larger border-radius for a softer look */
+  background-color: #a8b2ff; /* Optional: background color change */
 }
 
 .upload-reminder {
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 15px;
+  font-style:italic;
+  color: #caa7dc; /* Changed color for subtlety */
+  margin-top: 3px;
+  text-align: center;
 }

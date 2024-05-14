@@ -10,6 +10,7 @@ export function Chromagotchi({ health, avatarImage }) {
   useEffect(() => {
     const update = async () => {
       const result = await getGoal();
+      console.log("resultgoal: ", result);
       setGoal(result);
       if (localStorage.getItem('images')) {
         const result = JSON.parse(localStorage.getItem('images'));
