@@ -1,69 +1,69 @@
+body {
+  font-family: 'Consolas', monospace; /* Default font */
+  margin:0;
+  overflow:hidden;
+}
+
+#root {
+  border-radius: 13px;
+  overflow: hidden;
+}
+
 .app {
-    background-color: #9370db;
-    padding: 10px;
-    min-height: 20vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .header {
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Comic Sans MS', cursive;
-    margin-bottom: 20px;
-  }
-  
-  
-  .content {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    gap: 20px; 
-  }
-  
-  .content {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    align-items: center; 
-  }
-  
-  .tamagotchi-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 1000px; 
-  }
+  background-color: #6a5acd; /* Adjusted shade of purple for a more subtle look */
+  padding: 20px; /* Consistency in padding */
+  min-height: 50vh; /* Make sure it covers the full view height */
+  display: flex;
+  flex-direction: column;
+}
 
-  .button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    /* Blue shade */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .button:hover,
-  .button:focus {
-    background-color: #0056b3;
-    /* Darker blue shade */
-    transform: scale(1.05);
-    outline: none;
-    /* Removes the outline to keep the style clean */
-  }
-  
-  .button:active {
-    background-color: #004080;
-    /* Even darker blue when the button is clicked */
-    transform: scale(0.95);
-  }
+.header {
+  text-align: center;
+  font-size: 28px; /* Using a more professional appearance */
+  font-family: 'Press Start 2P', cursive; /* Ensuring font consistency */
+  margin-bottom: 15px; /* Reduced spacing */
+}
 
-  .inline-flex {
-    display: inline-flex;
-    align-items: center;
-  }
+.content {
+  display: flex;
+  justify-content: center; /* Center content for better balance */
+  flex-grow: 1;
+  align-items: start; /* Align items to start for better structure */
+  gap: 20px; /* Maintain gap for spacing */
+}
+
+.tamagotchi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;  /* Maintain width for design consistency */
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #a8b2ff;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Consistent rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Standard text size */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #5537b8; /* Darker blue on hover/focus for better UI feedback */
+  transform: scale(1.05); /* Slight enlargement on hover/focus */
+  outline: none; /* Clean style without outline */
+}
+
+.button:active {
+  background-color: #004080; /* Darker blue on active for tactile feedback */
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
+.inline-flex {
+  display: inline-flex;
+  align-items: center; /* Ensures alignment */
+}

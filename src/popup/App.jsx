@@ -81,7 +81,7 @@ export default function App() {
             avatarImage={uploadedImage}
           />
           <div style={{ display: 'flex', marginTop: '32px' }}>
-            <button className='button' onClick={handlers.openTab}>Menu</button>
+            <button className='button' onClick={handlers.openTab}> Menu </button>
             <button className='button' onClick={handlers.star} style={{ backgroundColor: '#fff', marginLeft: '32px', color: 'gray'}}>
               <span className='inline-flex'>
                 <img src="/images/star.png" alt="" style={{ marginRight: '8px' }} />

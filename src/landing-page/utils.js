@@ -48,20 +48,25 @@ export function getGoal() {
                     goal = goal - 2; 
                     // If the tab is active, calculate the active time and update the score accordingly
                     if (record.active) {
-                        const seconds = (+new Date() - record.activeTime) / 1000;
-                        if (stars.some(domain => record.url.includes(domain))) {
-                            goal = goal + parseInt((seconds + record.stayTime || 0) / 300) * 2;
-                        } else {
-                            goal = goal - parseInt(seconds / 300) * 1;
+                        const seconds = (+new Date() - record.activeTime) / 1000; 
+                        const mins = parseInt(seconds / 60); //active minutes on this tab
+                        console.log("active secs: " , seconds);
+                        console.log("active mins: ", mins);
+                        if (stars.some(domain => record.url.includes(domain))) { //if starred
+                            goal = goal + mins + 1;
+                        } else { //if not starred
+                            goal = goal - mins;
                         }
                         // If the tab is inactive, calculate the stay time and update the score accordingly
                     } else {
-                        const seconds = record.stayTime / 1000;
-                        if (stars.some(domain => record.url.includes(domain))) {
-                            goal = goal + parseInt(seconds / 300) * 2;
-                        } else {
-                            goal = goal - parseInt(seconds / 300) * 1;
-                        }
+                        // const seconds = record.stayTime / 1000;
+                        // const mins = parseInt(seconds / 60);
+                        // console.log("inactive mins: " , mins);
+                        // if (stars.some(domain => record.url.includes(domain))) {
+                        //     goal = goal + mins;
+                        // } else {
+                        //     goal = goal - mins;
+                        // }
                     }
                 });
                 resolve(Math.max(0, Math.min(100, goal)));
